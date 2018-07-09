@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AVc-tH-Okk">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ML Image Detector-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Machine_Learning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ethereum" translatesAutoresizingMaskIntoConstraints="NO" id="2Og-3n-Fh8">
+                                <rect key="frame" x="0.0" y="64" width="320" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="52s-BX-raV"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xI8-dK-pDK">
+                                <rect key="frame" x="0.0" y="314" width="320" height="254"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aho-1a-Qeb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="254"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aho-1a-Qeb" secondAttribute="bottom" id="0wz-I7-xEW"/>
+                                    <constraint firstItem="aho-1a-Qeb" firstAttribute="top" secondItem="xI8-dK-pDK" secondAttribute="top" id="Wgl-NU-J5p"/>
+                                    <constraint firstItem="aho-1a-Qeb" firstAttribute="leading" secondItem="xI8-dK-pDK" secondAttribute="leading" id="sr4-gr-Ha2"/>
+                                    <constraint firstAttribute="trailing" secondItem="aho-1a-Qeb" secondAttribute="trailing" id="yf3-MN-44U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2Og-3n-Fh8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1Jz-Fw-9fp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xI8-dK-pDK" secondAttribute="bottom" id="MlF-yG-Tdi"/>
+                            <constraint firstItem="xI8-dK-pDK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Sx2-wZ-6Sm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xI8-dK-pDK" secondAttribute="trailing" id="VtK-uy-Vfx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Og-3n-Fh8" secondAttribute="trailing" id="nI4-S1-GgO"/>
+                            <constraint firstItem="2Og-3n-Fh8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ooV-II-gWT"/>
+                            <constraint firstItem="xI8-dK-pDK" firstAttribute="top" secondItem="2Og-3n-Fh8" secondAttribute="bottom" id="oqh-GL-f3L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="ML Image Detector" id="zgC-xx-huQ">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="rcp-xx-bJt">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="BYZ-38-t0r" id="Sd9-Pb-9i4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="p8Y-UF-Ouh">
+                                <connections>
+                                    <action selector="folderTapped:" destination="BYZ-38-t0r" id="ZoH-AV-smB"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="2Og-3n-Fh8" id="IQr-gt-Jlz"/>
+                        <outlet property="tableView" destination="aho-1a-Qeb" id="mWU-Ww-drv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="81" y="-624"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Hwi-A0-Op0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AVc-tH-Okk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hRW-oJ-Zav">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VNV-rh-VQ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mal-6W-OcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-985" y="-616"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ethereum" width="256" height="256"/>
+    </resources>
 </document>
